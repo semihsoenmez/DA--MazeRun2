@@ -1,0 +1,371 @@
+
+
+\emph{\textbf{Diplomarbeit "MazeRun" 5AHEL 2021-22}}
+
+\hypertarget{lastenheft--pflichtenheft}{%
+\section{Lastenheft / Pflichtenheft}\label{lastenheft--pflichtenheft}}
+
+\hypertarget{kurzbeschreibung}{%
+\subsection{Kurzbeschreibung}\label{kurzbeschreibung}}
+\begin{quote}
+	Das Spiel ist in der 3D-Umgebung in Unity zu realisieren. Die Highscores
+	werden auf einem zentralen Server gespeichert. Die Eingaben vom
+	Kontroller sollen von der Megacard/ESP ausgelesen und mittels USB/WLAN
+	evtl. Bluetooth an das Spiel weitergeitet werden. Anschließend sollte
+	sich die Spielfigur entsprechend bewegen. Der aus einem eigenen Akku und
+	Gehäuse bestehender Kontroller soll auch als Feedback beim Spielen
+	vibrieren. Die Diplomarbeit soll auch ein How-To für Erstellung eines
+	Unity-Spiels/Megacard \& ESP Kontrollers sein.
+\end{quote}
+
+
+\hypertarget{aufgaben-einzelner-projektmitglieder}{%
+\subsection{Aufgaben einzelner
+Projektmitglieder}\label{aufgaben-einzelner-projektmitglieder}}
+
+\begin{longtable}{l l}
+
+\textbf{Name} & \textbf{Individuelle Themenstellung}\tabularnewline
+
+\endhead
+Semih Can Burcak (Hauptverantwortlich) & \makecell[tl]{Projektmanagement /
+	Spielsoftwareentwicklung \\ / Spieldesign / Onlinespielentwicklung  } \\
+Semih Sönmez & \makecell[tl]{Spielsoftwareentwicklung / Spieldesign} \\
+Manuel Rath & \makecell[tl]{Schaltungsdesign / Analoglayout \\/ Microcontroller
+Programmierung} \\
+Mateo Herceg & \makecell[tl]{Schaltungsdesign / Analoglayout \\/ Microcontroller
+Programmierung} \\
+
+\end{longtable}
+
+\hypertarget{projektziele-nach-smart}{%
+\subsection{Projektziele nach SMART}\label{projektziele-nach-smart}}
+\begin{quote}
+
+\hypertarget{spezifisch}{%
+\subsubsection{Spezifisch}\label{spezifisch}}
+
+Das Spiel soll professionell aussehen und ohne Probleme online von jeden
+gespielt werden können. Die Spielstände der Spieler sollen einwandfrei
+auf einem Server gespeichert werden. Die selbstgemachten Kontroller
+sollen ebenfalls einwandfrei funktionieren. Die Verbindung zwischen dem
+Spiel (C\#) und Kontroller (C) soll automatisch sein bzw. die Kontroller
+sollen Plug \& Play Kontroller sein.
+
+\hypertarget{messbar}{
+\subsubsection{Messbar}\label{messbar}}
+
+Jede neue Funktion des Spiels soll ausführlich getestet werden. Die
+Verbindung des Kontrollers zum Spiel wird im Spiel getestet, indem wir
+schauen ob die Tasten und die Joysticks das machen, was wir wollen.
+
+Nachdem das Spiel und die Kontroller fertig entwickelt wurden, wird
+alles nochmals getestet um evtl. Bugs zu finden und zu schauen ob alles
+wie geplant funktioniert.
+
+\subsubsection{Realistisch}\label{realistisch}
+
+Die Programmiersprachen C\# und C wurden im Unterricht schon
+durchgenommen. Die Kommunikation zwischen PC und µC wurde noch nicht
+gemacht, aber mit der richtigen Hilfe bzw. Professor sollte es
+realisierbar sein. Das Projekt wird Schritt für Schritt entwickelt und
+ist daher realistisch.
+
+\hypertarget{terminiert}{%
+\subsubsection{Terminiert}\label{terminiert}}
+
+
+\begin{longtable}[]{@{}ll@{}}
+
+\emph{Datum} & \emph{Meilenstein}\tabularnewline
+
+\endhead
+
+\textbf{Anfang Oktober (04.10.2021)} & Auswahl und Layout der Hardware,
+Anfangen das Spiel zu programmieren\tabularnewline
+\textbf{Anfang November (01.11.2021)} & Die Umgebung/Charaktere des
+Spiels sollen fertig sein,\tabularnewline
+\textbf{Mitte bis Ende November (30.11.2013)} & Entwicklungsphase des
+Spiels fertig,\tabularnewline
+\textbf{Dezember und Jänner} & Online-Funktion des Spiels
+programmieren\tabularnewline
+\textbf{Ende 1. Halbjahr (14.02.2022)} & Fertigstellung des
+Projekts\tabularnewline
+
+\caption{Meilensteine}
+
+\end{longtable}
+
+Das Projekt soll in diesem Halbjahr (Wintersemester SJ 2021-22)
+fertiggestellt werden.
+
+\end{quote}
+
+\hypertarget{produkteinsatz}{%
+\subsection{Produkteinsatz}\label{produkteinsatz}}
+\begin{quote}
+Das Spiel sollte mit einem Computer gestartet werden, der Zugang auf ein
+Internet verfügt. Die Kontroller sollten entweder über USB, Bluetooth
+oder WLAN mit dem PC verbunden sein. Bei kabellosem Kontroller soll
+sicher gestellt werden, dass die Batterie noch Energie hat.
+\end{quote}
+\hypertarget{funktionale-anforderungen}{%
+\subsection{Funktionale Anforderungen}\label{funktionale-anforderungen}}
+\begin{quote}
+Durch den Kontroller sollten folgende Bewegungen durchgeführt werden
+können:
+
+\begin{itemize}
+\item
+  Grundlegende Bewegungen (vorne, hinten, rechts, links,)
+\item
+  Springen des Spielers
+\item
+  Bewegung der Kamera
+\end{itemize}
+\end{quote}
+\hypertarget{projektphasen-und-meilensteine}{%
+\subsection{Projektphasen und
+Meilensteine}\label{projektphasen-und-meilensteine}}
+ 
+\hypertarget{spiel}{%
+\subsubsection{Spiel}\label{spiel}}
+\begin{quote}
+Zuerst sollen die Grundlegenden Bewegungen vom Charakter programmiert
+werden. Anschließend kann das Multiplayer Spielmodus programmiert
+werden. Das Know-How soll bis das Spiel bereit ist (Bewegungen, Umgebung
+etc.), um es online zu spielen, erschafft werden.
+\end{quote}
+\hypertarget{kontroller}{%
+\subsubsection{Kontroller}\label{kontroller}}
+\begin{quote}
+Zuerst werden Layout und Schaltplan erstellt und daraus wird die
+Leiterplatte entstehen. In der zwischen Zeit werden die einzelnen
+Bauteile bestellt und Angesteuert. Nach der Fertigung der Hardware
+starten wir mit einzelnen Testprogrammen, die wir später für die fertige
+Software brauchen. Zu guter Letzt wird ein passendes Gehäuse mit einem
+Akku konstruiert.
+\end{quote}
+\hypertarget{arbeitspakete-aufgelistet}{%
+\subsection{Arbeitspakete
+(aufgelistet)}\label{arbeitspakete-aufgelistet}}
+
+\hypertarget{semih-can-burcak}{%
+\subsubsection{Semih Can Burcak}\label{semih-can-burcak}}
+
+\begin{itemize}
+\item
+  Benutzeroberfläche des Spiels
+
+  \begin{itemize}
+  \item
+    Username Eingabe - must have
+  \item
+    Wahlmenü (Einzelspieler oder Mehrspieler, Level usw.) - must have
+  \item
+    Es soll aus HTL Rankweil Farben bestehen (Blau, Grau, Schwarz)
+  \item
+    Benutzerfreundlich gestalten - must have
+  \end{itemize}
+\item
+  Audio
+
+  \begin{itemize}
+  \item
+    Copyrightfreie Audios verwenden - must have 
+  \item
+    Die Musik und die Sounds sollen dem Spiel mehr energetisch machen -
+    must have
+  \item
+    Lautstärke gut einstellen (nicht zu laut oder leise)
+  \end{itemize}
+\item
+  Multiplayer - must have
+
+  \begin{itemize}
+  \item
+    Webserver einrichten 
+  \item
+    Datenbank erstellen
+  \item
+    Datenbank und Webserver mit Unity verbinden
+  \item
+    Schauen, dass jeder Spieler ein Charakter zugeteilt kriegt
+  \end{itemize}
+\item
+  Story
+
+  \begin{itemize}
+  \item
+    Es soll nicht langweilig sein und Interesse wecken - must have
+  \item
+    Zuerst auf dem Papier das Konzept bzw. Story festigen und erst
+    programmieren
+  \end{itemize}
+\item
+  Projektmanagement - must have
+
+  \begin{itemize}
+  \item
+    Das Team soll immer organisiert bleiben
+  \item
+    Jeder soll seine Aufgaben rechtzeitig erledigen, damit kein
+    Zeitdruck entsteht
+  \item
+    Ordentlich Dokumentieren
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{semih-suxf6nmez}{%
+\subsubsection{Semih Sönmez}\label{semih-suxf6nmez}}
+
+\begin{itemize}
+\item
+  Entwicklung des Hauptcharakters
+
+  \begin{itemize}
+  \item
+    Grundlegende Bewegungen (vorne, hinten, rechts, links) -must have
+  \item
+    Springfunktion um über Hindernissen zu springen -must have
+  \item
+    Schussfunktion um Gegner zu eliminieren
+  \end{itemize}
+\item
+  Entwicklung der Gegner
+
+  \begin{itemize}
+  \item
+    Die Gegner sollen zum Hauptcharakter rennen -must have
+  \item
+    Bei einem Kontakt, soll das Leben vom Hauptcharakter weniger werden
+    -must have
+  \end{itemize}
+\item
+  Umgebung
+
+  \begin{itemize}
+  \item
+    Die Charaktere sollen die Umgebung nicht verlassen dürfen -must have
+  \item
+    Die Umgebung soll gut beleuchtet sein -must have
+  \end{itemize}
+\item
+  Missionen \& Levels
+
+  \begin{itemize}
+  \item
+    5 verschiedene Levels -must have
+  \item
+    Missionen sollen interessant und bewältigbar sein -must have
+  \end{itemize}
+\item
+  Kamera
+
+  \begin{itemize}
+  \item
+    Bei Einzelspielermodus soll die Kamera den Hauptcharakter folgen
+    -must have
+  \item
+    Bei Multiplayermodus soll die Kamera für beide Spieler angepasst
+    werden -must have
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{manuel-rath}{%
+\subsubsection{Manuel Rath }\label{manuel-rath}}
+
+\begin{itemize}
+\item
+  Leiterplatte - must have
+
+  \begin{itemize}
+  \item
+    Schaltplan mit geeigneten Bauteilen \& Stromversorgungsschaltung
+    erstellen
+  \item
+    Layout möglichst kompackt
+  \end{itemize}
+\item
+  Gehäuse - must have
+
+  \begin{itemize}
+  \item
+    handliches und nicht zu großes Gehäuse 
+  \item
+    mit 3D Drucker erstellen 
+  \end{itemize}
+\item
+  Verbindung von Kontroller zum PC
+
+  \begin{itemize}
+  \item
+    Daten zuerst über UART an den PC senden - must have
+  \item
+    Daten mit Bluetooth Modul an den PC senden
+  \end{itemize}
+\item
+  Komponenten Ansteuern mit der Megacard - must have
+
+  \begin{itemize}
+  \item
+    Joystick ansteuern und daten auslesen
+  \item
+    Vibrationsmotor ansteuern 
+  \item
+    Tasten auslesen 
+  \item
+    Programme in einem Spiel testen 
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{mateo-herceg}{%
+\subsubsection{Mateo Herceg}\label{mateo-herceg}}
+
+\begin{itemize}
+\item
+  Leiterplatte - must have
+
+  \begin{itemize}
+  \item
+    Layout und Schaltplan mit diversen Bauteilen (+ESP Modul) entwickeln
+    \& Stromversorgungsschaltung hinzu entwickeln
+  \item
+    Strukturiertes Layout + übersichtlicher Schaltplan 
+  \end{itemize}
+\item
+  Verbindung Kontroller/Computer
+
+  \begin{itemize}
+  \item
+    Daten mittels ESP Modul über WLAN an den PC senden - must have
+  \item
+    Daten mittels ESP Modul über Bluetooth an den PC senden
+  \end{itemize}
+\item
+  Ansteuerung - must have
+
+  \begin{itemize}
+  \item
+    Knöpfe/Tasten ansteuern und Signale/Daten auslesen mittels ESP Modul
+  \item
+    Joystick ansteuern und Signale/Daten auslesen mittels ESP Modul
+  \item
+    Vibrationsmotor ansteuern mittels ESP Modul
+  \item
+    Alle angesteuerten Komponenten an PC senden und Testen
+  \end{itemize}
+\item
+  Gehäuse - must have
+
+  \begin{itemize}
+  \item
+    Gehäuse konstruieren
+  \item
+    Gehäuse mittels 3D Drucker erstellen
+  \item
+    einfaches handliches Gehäuse
+  \end{itemize}
+\end{itemize}
+
+

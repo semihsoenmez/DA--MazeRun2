@@ -1,0 +1,172 @@
+% Preamble (Angaben gelten für das ganze Dokument)
+% Hilfe für Bibtex Einträge: https://www.literatur-generator.de
+% ------------------------------------------------
+% rote Umrandungen bei Verlinkungen entfernen: hidelinks
+% 12pt als Standardschriftgröße
+% A4-Dokument
+% twoside (zweiseitiges Dokument): nur so werden verschiedene Fußzeilen für gerade bzw. ungerade Seitenzahlen übernommen
+% article: Dokumentvorlage
+\documentclass[hidelinks,12pt,a4paper,twoside]{article}
+% Einbinden von Paketen
+% ---------------------
+\usepackage{titlesec} 						% ermöglicht die Verwendung der title- und section-Befehle
+\usepackage[utf8]{inputenc}					% ermöglicht das Verwenden von Umlauten - linux od osx
+\usepackage{makecell}
+\usepackage[top=3.5cm,left=3cm,right=2cm,bottom=2.5cm,headsep=0.3in,headheight=1in]{geometry} % Seitenränder
+\usepackage{graphicx} 						% ermöglicht die Verwendung des includegraphics-Befehls zur Einbindung von Bildern
+\usepackage{fancyhdr} 						% ermöglicht die einfache Erstellung von Kopf- und Fußzeilen
+\usepackage{setspace} 						% ermöglicht Veränderung verschiedener Abstände
+\usepackage{array} 							% ermöglicht unter anderem das Erstellen von benutzerdefinierten Vorlagen für Tabellenspalten
+\usepackage[export]{adjustbox} 				% Umrandung von Bildern
+\usepackage[nottoc,numbib]{tocbibind} 		% ermöglicht die Erstellung eines Inhaltsverzeichnisses
+\usepackage{tocloft}
+\setlength{\cftsubsecnumwidth}{3em} 		% Set distance between number and text of subsection in table of contents
+\usepackage{color} 							% ermöglicht das Erstellen von benutzerdefinierten Farben
+
+\usepackage{longtable}						% Unterstützung für mehrseitige Tabellen
+\usepackage[ngerman]{babel}					% Deutsche Bezeichnungen 
+
+\usepackage[backend=biber,citestyle=verbose, bibstyle=verbose]{biblatex} %mehrsprachiges Bibliotheks(Literatur-)verzeichnis
+\usepackage[babel,german=guillemets]{csquotes} %deutsches Anführungszeichen
+\addbibresource{bibliography.bib}
+
+\usepackage{blindtext} 						% Blindtext
+\usepackage{url} 							% Formatierung von URLs
+\usepackage[bottom,hang,stable]{footmisc} 	% Fußnoten immer am unteren Ende der Seite
+\usepackage{caption} 						% ermöglicht das Anpassen von diversen Beschriftungen
+\usepackage{subcaption} 					% ermöglicht das Erstellen von Unterbezeichnungen (subfigures)
+\usepackage{hyperref} 						% Hyperlinks im Dokument
+\usepackage{pdfpages} 						% einbinden von PDF-Dateien
+\usepackage{amsmath} 						% grundlegende mathematische Funktionen
+
+\usepackage{listings,chngcntr} 				% kapitelweise Nummerierung für Codeabschnitte
+\usepackage{listings,xcolor} 				% ermöglicht das Einbinden von Codesegmenten
+\usepackage{listingsutf8} 					% ermöglicht das Einbinden von Codesegmenten
+
+\usepackage{float} 							% Positionierung verschiedener Objekte
+\usepackage{footnote} 						% ermöglicht das Anpassen von Fußnoten
+\usepackage{enumitem} 						% ermöglicht das Anpassen von Aufzählungen
+\usepackage{longtable} 						% erlaubt mehrseitige Tabellen
+\usepackage{url} 							% gibt eine schöner formatierte Internetadresse aus
+
+
+% allgemein gültige Formateinstellungen
+% -------------------------------------
+\renewcommand{\familydefault}{\sfdefault} 	% set Font-Family to a similar font like Arial
+\raggedbottom 								% Abschnitte werden nicht auseinander gezogen, um den restlichen Platz auf einer Seite zu füllen
+%\raggedright 								% gesamtes Dokument linksbündig (auch Paragraphen) OHNE Silbentrennung
+
+\usepackage{ragged2e}						% gesamtes Dokument linksbündig (auch Paragraphen) MIT Silbentrennung
+\RaggedRight
+
+\onehalfspacing 							% 1.5-facher Abstand zwischen den Zeilen
+
+\renewcommand{\arraystretch}{1.2} 			% Vergrößerung des Abstands zwischen den Tabellenzeilen
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} % erstellen eines Spaltentyps mit zentriertem Inhalt unter der Angabe einer Spaltenbreite
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % erstellen eines Spaltentyps mit linksbündigem Inhalt unter der Angabe einer Spaltenbreite
+
+\setlength{\footnotemargin}{0.5cm} 			% Abstand zwischen Fußnotennummer und -text
+\setlist{nosep} 							% zusätzliche Abstände bei Aufzählungen entfernen
+\setlength{\parskip}{1em} 					% Abstand nach einem Absatz
+
+% Abstände vor und nach Überschriften auf den verschiedenen Ebenen
+\titlespacing\section       {0pt}{0pt plus 0pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection    {0pt}{0pt plus 0pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection {0pt}{0pt plus 0pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+% Formateinstellungen für Codesegmente
+% ------------------------------------
+\usepackage{caption}
+\usepackage{minted} 						% für schöne Darstellung von Code
+\usepackage{dingbat}						% für Sonderzeichen wie \carriagereturn
+
+\setminted{
+	autogobble,								% rückt Code soweit nach links wie möglich
+	stepnumber=2,							% nur jede gerade Zeilennummer wird angezeigt
+	fontfamily=tt,
+	linenos=true,
+	numberblanklines=true,
+	numbersep=5pt,
+	gobble=0,
+	frame=single,
+	framerule=0.4pt,
+	framesep=2mm,
+	funcnamehighlighting=true,
+	tabsize=4,
+	obeytabs=false,
+	breaklines,
+	breakafter=">/,
+	breakbefore=. ,
+	breaksymbolindentright=10pt,
+	breaksymbolsepright=0pt
+}
+
+\newmintedfile[csharpcode]{csharp}{}
+\newmintedfile[xamlcode]{xml}{}
+\newmintedfile[bashcode]{bash}{}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{longlisting}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}		% zum Unterbinden des roten Rahmens im Quellcode um ein $-Zeichen
+
+\newenvironment{longlisting}{\captionsetup{type=listing} \linespread{1.1}}{} % 1.1 facher Zeilenabstand bei listings
+
+% Anlegen von benutzerdefinierten Farben für das Hervorheben bestimmter Teile des Codes
+\definecolor{shblue}{rgb}{0.13,0.13,1} % Farbe für Schlüsselwörter
+\definecolor{shgreen}{rgb}{0,0.5,0} % Farbe von Kommentaren
+\definecolor{shred}{rgb}{0.9,0,0} % Farbe von Zeichenfolgen
+\definecolor{lightgray}{gray}{0.95} % Hintergrundfarbe
+\definecolor{maroon}{rgb}{0.5,0,0}
+\definecolor{bg}{rgb}{0.95,0.99,0.99}
+
+% benutzerdefiniertes Syntax-Highlighting für XAML
+\lstdefinelanguage{XAML}
+{
+	morestring=[s]{"}{"},
+	moredelim=[s][\color{black}]{>}{<},
+	moredelim=[s][\color{maroon}]{<}{\ },
+	moredelim=[s][\color{maroon}]{</}{>},
+	moredelim=[l][\color{maroon}]{/>},
+	moredelim=[l][\color{maroon}]{>},
+	morecomment=[s]{<?}{?>},
+	morecomment=[s]{<!--}{-->},
+	commentstyle=\color{shgreen},
+	stringstyle=\color{shblue},
+	identifierstyle=\color{shred}
+}
+
+% spezifische Einstellungen für verschiedene Sprachen
+\lstdefinestyle{csharp}
+{
+	language=[Sharp]C,
+	commentstyle=\color{shgreen}, % Farbe für Kommentare
+	keywordstyle=\color{shblue},
+	stringstyle=\color{shred}
+}
+
+\lstdefinestyle{xaml}
+{
+	language=XAML
+}
+
+\skip\footins 30pt				% etwas größerer Abstand oberhalb Fußnote
+
+% Anpassung diverser Beschriftungen
+\captionsetup[listing] {labelfont=bf,textfont=it,format=hang,justification=raggedright}
+\captionsetup[table]   {labelfont=bf,textfont=it,format=hang,justification=raggedright}
+\captionsetup[figure]  {labelfont=bf,textfont=it,format=hang,justification=raggedright}
+
+\captionsetup[figure]  {name=Abbildung} 		% Abbildungen
+\captionsetup[table]   {name=Tabelle} 			% Tabellen
+\captionsetup[longlisting]{name=Codeabschnitt}	% Codeabschnitte -> fkt. leider nicht
+
+
+% kapitelweise Nummerierung
+\numberwithin{figure}{section}				% kapitelweise Nummerierung für Grafiken
+\numberwithin{table}{section}				% kapitelweise Nummerierung für Tabellen
+\numberwithin{listing}{section}				% kapitelweise Nummerierung für Codeabschnitte
+
+\usepackage{tcolorbox}
+\newtcolorbox[blend into=figures]{myfigure}[2][]{float=htb,capture=hbox,
+	blend before title code={\fbox{##1}\ },title={#2},every float=\centering,#1}
+

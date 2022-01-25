@@ -1,0 +1,197 @@
+\input{preamble.tex}
+
+% Quellennachweise in weiterer Datei anlegen
+\bibliography{bibliography}
+\include{team_members}
+
+\pagestyle{fancy}
+% Kopf- und Fußzeile
+% ------------------
+% Kopfzeile: links: Logo HTL Rankweil; mitte: Schulbezeichnung; rechts: Logo HTL
+\lhead{\hspace{0.2cm} \includegraphics[height=1.04cm]{img/htlr_logo.png}}
+\chead{\textbf{HTBLuVA  Rankweil} 
+	\\[0.05in]
+	\footnotesize{\textit{Höhere Lehranstalt für Elektronik und Technische Informatik}}}
+\rhead{\includegraphics[height=1.04cm]{img/htl_logo.jpg} \hspace{0.2cm}}
+
+% Fußzeile
+\fancyfoot{} 
+
+
+\begin{document}
+	% Titelseite
+	\begin{center}
+		\textbf {\huge {\uppercase {MazeRun}}}
+		\par \large {Gesamtprojekt}
+		\par \textbf {\huge {\uppercase {Thema}}}
+		\vspace{0.3cm}
+		\linebreak
+		\includegraphics[frame, height=6cm]{img/title_placeholder.png}
+	\end{center}
+	
+	\vfill % damit der folgende am Blattende positioniert wird
+	
+
+\begin{minipage}[t] {0.4\textwidth}
+	\textbf{Teammitglieder:} \\
+	\emplLastA \\
+	\emplLastB \\
+	\emplLastC \\
+	\emplLastD \\
+\end{minipage}
+\begin{minipage}[t] {0.4\textwidth}
+	\textbf{Betreuer:} \\		
+	\supervisor \\
+\end{minipage}
+
+	\par Rankweil, am \PrintDate \\		
+
+	\noindent\rule{\textwidth}{0.4pt}
+	Abgabevermerk:
+	\linebreak
+
+	\begin{tabular}{p{7cm}C{6cm}}
+		\hspace{1cm} DA original, am \PrintDate & ........................................ \\ 
+		& \supervisor \vspace{0.5cm} \\
+		
+	\hspace{1cm} DA digital, am \PrintDate & ........................................ \\ 
+		& \supervisor \\
+	\end{tabular}
+	
+	% Leere Seite
+	\pagebreak
+	\thispagestyle{empty}
+	\cleardoublepage
+	\pagebreak
+	
+	% ab jetzt andere Fußzeile
+	%\fancyhead{}
+	%\renewcommand{\headrulewidth}{0.0pt}
+	\SecAuth{\emplLastA, \emplLastB, \emplLastC, \emplLastD} % festlegen der Verfasser dieses Kapitels
+	
+	\pagenumbering{Roman}
+	\fancyfoot[LE,RO]{\thepage}
+	\fancyfoot[LO,RE]{\DADate~\textbar~\diplomatitle~\textbar ~\@SecAuth}
+	\renewcommand{\footrulewidth}{0.4pt} % anzeigen Separator-Strich in der Fußzeile (standardmäßig deaktiviert)
+	
+	
+% Eidesstattliche Erklärung (Deutsch)
+\input{affirmation_de.tex} % 
+\pagebreak
+
+% Abkürzungen und Hinweise
+\section*{Abkürzungen \& Hinweise}
+\begin{singlespace}	
+	\begin{tabular}{ll}
+		DA     & Diplomarbeit \\
+		WPF    & Windows Presentation Foundation \\
+		CAD    & Computer-aided design \\
+		Regex  & Regular expression \\
+		GPL    & General Public License  \\
+		SI     & Internationales Einheitensystem \\
+		COM    & Component Object Model \\
+		GUI    & Graphical User Interface \\
+	\end{tabular}
+\end{singlespace}
+
+\pagebreak
+	
+% Inhaltsverzeichnis
+% ------------------
+\singlespacing % Zeilenabstand verringern
+
+% Inhaltsverzeichnis in Inhaltsverzeichnis 
+% s. auch https://www.latex-tutorial.com/tutorials/table-of-contents/
+%\renewcommand{\tableofcontents}{\begingroup
+%	\tocfile{Inhaltsverzeichnis}{toc}
+%	\endgroup}
+
+\tableofcontents % eigentlicher Befehl für das Anlegen des Inhaltsverzeichnisses
+\onehalfspacing % standardmäßigen Zeilenabstand wiederherstellen
+\pagebreak
+
+% ab jetzt mit arabischen Seitennummern
+\renewcommand{\thepage}{\arabic{page}}% Arabic page numbers
+
+% eigentlicher Inhalt des Dokuments
+% --------------------
+\SecAuth{\emplLastA} % festlegen der Verfasser dieses Kapitels
+
+% DA Dokumentation (Deutsch)
+\input{documentation_de.tex} % 
+\pagebreak
+
+% DA Dokumentation (Englisch)
+\input{documentation_en.tex} % 
+\pagebreak
+
+% zusammenfassung
+\input{zusammenfassung.tex} % 
+\pagebreak
+
+% Abstract (English)
+\input{abstract_en.tex} % English
+\pagebreak
+	
+% Kapitel 1: Pflichtenheft
+% -------------
+\input{MazeRun_Pflichtenheft.tex}
+\pagebreak
+	
+% Kapitel 2
+% -------------
+\input{chapter2/chapter2.tex}
+\pagebreak
+
+% Abbildungsverzeichnis
+% ---------------------
+% Abbildungsverzeichnis in Inhaltsverzeichnis
+\renewcommand{\listoffigures}{\begingroup
+	\tocsection
+	\tocfile{Abbildungsverzeichnis}{lof}
+	\endgroup}
+\listoffigures % eigentlicher Befehl für das Anlegen des Abbildungsverzeichnisses
+\pagebreak
+
+% Tabellenverzeichnis
+% -------------------
+% Tabellenverzeichnis in Inhaltsverzeichnis
+\renewcommand{\listoftables}{\begingroup
+	\tocsection
+	\tocfile{Tabellenverzeichnis}{lot}
+	\endgroup}
+
+\listoftables % eigentlicher Befehl für das Anlegen des Tabellenverzeichnisses
+\pagebreak
+
+% Codeabschnittsverzeichnis
+% -------------------------
+% Codeabschnittsverzeichnis in Inhaltsverzeichnis
+\stepcounter{section}		% increase section-counter
+\renewcommand{\listoflistingscaption}{\arabic{section}~~~Codeverzeichnis}
+\addcontentsline{toc}{section}{\arabic{section}~~~Codeverzeichnis} % Fügt Codevezeichnis ins Inhaltsverzeichnis ein
+
+\listoflistings
+\pagebreak
+
+% Quellenverzeichnis
+% ------------------
+\onehalfspacing
+\printbibliography[heading=bibnumbered, title={Quellenverzeichnis}]
+
+\pagebreak
+
+
+
+% Projekthandbuch
+% ---------------
+%\SecAuth{\emplLastA} % Autor des Projekthandbuchs in Fußzeile
+%\includepdf[pages=1,scale=.9,pagecommand=\section{Projekthandbuch}]{doc/Projekthandbuch.pdf} % erste Seite des Projekthandbuchs mit Überschrift für Inhaltsverzeichnis
+%\includepdf[pages=2-,scale=.9,pagecommand={}]{doc/Projekthandbuch.pdf} % einbinden des restlichen Projekthandbuchs
+
+\input{wochenberichte/SemihCanBurcak/SemihCanBurcak.tex}
+\pagebreak
+\input{wochenberichte/SemihSoenmez/SemihSoenmez.tex}
+\pagebreak
+
+\end{document}

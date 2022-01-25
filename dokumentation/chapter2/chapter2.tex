@@ -1,0 +1,156 @@
+\section{Kapitel 2}
+	\SecAuth{\emplLastB} % festlegen der Verfasser dieses Kapitels
+
+\subsection{BlaBla 1}
+\blindtext[1]\footnote{\cite{Bringhurst1993}\label{xx}}
+
+\subsubsection{BlaBla 2}
+\blindtext[1]\textsuperscript{\ref{xx}}\textsuperscript{,}\footcite{wiki:latex}
+
+\subsection{UI Beschreibung MainForm}
+\blindtext[1]
+
+\begin{longlisting}
+	\csharpcode[firstline=18]{chapter2/code/MainWindow.xaml.cs}
+	\caption{Code behind MainWindow.xaml.cs}	
+	\label{lst:code-behind}
+\end{longlisting}
+
+
+Computerarchitektur siehe \citetitle*{Tanenbaum2006} von \citeauthor{Tanenbaum2006} \footcite{Tanenbaum2006}
+
+\begin{itemize}
+	\item \cite{DictLeoOrg}
+	\item \cite{USAB2011}
+	\item \cite{DictChemnitz}
+\end{itemize}
+
+\blindtext[2]
+
+Ebenso erwähnenswert ist \citetitle[42]{KeithThesis}. 
+
+Ein lesenswertes Buch ist \citetitle{einstein}\footcite{einstein}
+
+
+Der Code vom Code Schnipsel \ref{lst:code-behind}, s. S \pageref{lst:code-behind}, hat die Aufgabe. Wie man hier sieht, kann gut auf Code mit einem label referenziert werden.
+
+\subsection{Code Behind MainForm}
+Und hier folgt der Code für das UI.
+
+\begin{longlisting}
+	\xamlcode[firstline=14, lastline=33]{chapter2/code/MainWindow.xaml}
+	\caption{MainWindow.xaml}
+	\label{lst:the-code}
+\end{longlisting}
+%\onehalfspacing
+
+\blindtext[1]
+
+\begin{table} [h]
+	\begin{tabular}{|c|c|}
+		\hline 
+		fas & fsa \\ 
+		\hline 
+		fas & fas \\ 
+		\hline 
+	\end{tabular} 
+	\caption[Beschriftung der Tabelle - für Verzeichnis]{Beschriftung der Tabelle}
+\end{table}
+
+
+\begin{longtable}{|l|l|l|}
+	\hline 
+	\multicolumn{1}{|c|}{\textbf{Time (s)}} & \multicolumn{1}{c|}{\textbf{Triple chosen}} & \multicolumn{1}{c|}{\textbf{Other feasible triples}} \\ \hline 
+	\endfirsthead
+	
+	\multicolumn{3}{c}%
+	{{\bfseries \tablename\ \thetable{} -- Fortsetzung}} \\
+	\hline \multicolumn{1}{|c|}{\textbf{Time (s)}} &
+	\multicolumn{1}{c|}{\textbf{Triple chosen}} &
+	\multicolumn{1}{c|}{\textbf{Other feasible triples}} \\ \hline 
+	\endhead
+	
+	\hline \multicolumn{3}{|r|}{Fortsetzung nächste Seite} \\ \hline
+	\endfoot
+	
+	\hline
+	\caption{Eine lange Tabelle}
+	
+	\endlastfoot
+	
+		
+	
+	0 & (1, 11, 13725) & (1, 12, 10980), (1, 13, 8235), (2, 2, 0), (3, 1, 0) \\
+	2745 & (1, 12, 10980) & (1, 13, 8235), (2, 2, 0), (2, 3, 0), (3, 1, 0) \\
+	5490 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	8235 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	10980 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	13725 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	16470 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	19215 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	21960 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	24705 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	27450 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	30195 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	32940 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	35685 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	38430 & (1, 13, 10980) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	41175 & (1, 12, 13725) & (1, 13, 10980), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	43920 & (1, 13, 10980) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	46665 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	49410 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	52155 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	54900 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	57645 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	60390 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	63135 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	65880 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	68625 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	71370 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	74115 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	76860 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	79605 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	82350 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	85095 & (1, 12, 13725) & (1, 13, 10980), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	87840 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	90585 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	93330 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	96075 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	98820 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	101565 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	104310 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	107055 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	109800 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	112545 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	115290 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	118035 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	120780 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	123525 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	126270 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	129015 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	131760 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	134505 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	137250 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	139995 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	142740 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	145485 & (1, 12, 16470) & (1, 13, 13725), (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	148230 & (2, 2, 2745) & (2, 3, 0), (3, 1, 0) \\
+	150975 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	153720 & (1, 12, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	156465 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	159210 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	161955 & (1, 13, 16470) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	164700 & (1, 13, 13725) & (2, 2, 2745), (2, 3, 0), (3, 1, 0) \\
+	
+\end{longtable} 
+
+
+\begin{figure}[b] % b... Grafik am Fuß, t... Grafik am Kopf, h... here
+	\centering
+	\includegraphics[width=0.6\linewidth]{img/htl_logo.jpg}
+	\caption[Beschreibung für Verzeichnis]{Beschriftung unter Abbildung\footnotemark}
+\end{figure}
+\footnotetext{\footcite{htl_Logo}}
+
+
+\blindtext[3]

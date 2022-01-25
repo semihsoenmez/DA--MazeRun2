@@ -1,0 +1,17 @@
+# exclude all log-files
+*.aux
+*.lol
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+# *.pdf
+*.loc
+_minted-MainDocument
+MainDocument.dvi

@@ -1,0 +1,102 @@
+\chapter{Programmiersprachen}
+
+\section{Einleitung}
+Folgende zwei Grundsätze sollen beim Programmieren immer vor Augen gehalten werden:
+\begin{itemize}
+	\item Erst nachdenken, bevor in die Tasten gehackt wird.
+	\item Klar und nachvollziehbar programmieren (unverständlich zu programmieren ist keine Kunst)
+\end{itemize}
+
+Bevor wir uns mit dem eigentlichen Thema – der Programmiersprache C – beschäftigen, ein kleines Beispiel, das den Unterschied zwischen dem, was der Mensch tut, und dem, was ein Computerprogramm macht, veranschaulicht:
+
+\begin{tcolorbox}[colbacktitle=red!50!white,
+	title=Beispiel,coltitle=black,
+	fonttitle=\bfseries]
+	
+	Schauen Sie sich zuerst die Arbeit eines Lohnbuchhalters an. Er stellt zuerst anhand der Stundenabrechnungen und Stempelkarten fest, wieviele Stunden der Arbeitnehmer gearbeitet hat. Die Stunden werden addiert um die Gesamtarbeitszeit zu erhalten. Diese Zeit wird mit dem Stundenlohn multipliziert, und dann werden Steuern und Sozialabgaben abgezogen. Dabei muß der Buchhalter einige Fakten aus der Personalkartei heraussuchen - Kinderzahl, Familienstand, Steuerklasse, Versicherungsnummer etc. Ist die Berechnung beendet, werden Lohnstreifen und Überweisungsformulare ausgefüllt und an die richtigen Stellen weitergeleitet. 
+	
+	Der Buchhalter erhält also gewisse Informationen, nämlich Arbeitszeit, Steuerklasse, Stundenlohn usw.; er verarbeitet dann diese Informationen nach einem bestimmten Schema und gibt schließlich neue Informationen, z. B. den Betrag des Nettolohns an andere weiter.
+
+\end{tcolorbox}
+
+Der Informationsfluß läßt sich also folgendermaßen skizzieren: 
+
+%\begin{tcolorbox}[colbacktitle=red!50!white,
+%	title=Informationsfluß,coltitle=black,
+%	fonttitle=\bfseries]
+
+\begin{myfigure}{Informationsfluß}
+	\huge	Eingabe 
+		$\Rightarrow$
+		Verarbeitung
+		$\Rightarrow$
+		Ausgabe
+\end{myfigure}
+
+
+
+Wie aus diesem Beispiel leicht ersichtlich, lassen sich Computerprogramme vor allem für solche Zwecke erstellen, bei denen eingegebene Daten nach einem definierten Algorithmus verarbeitet werden und dann wieder ausgegeben werden. 
+
+\section{Programmiersprachen}	Programmiersprachen
+Die CPU (Central Processing Unit), quasi das „Herz“ eines Computers, kann nur relativ einfache Befehle ausführen wie addieren, Daten von einer bestimmten Speicheradresse laden oder dorthin abspeichern, zu einer bestimmten Speicheradresse springen und dort den Programmablauf fortführen, etc.
+Diese Befehle sind codiert, also sozusagen durchnumeriert, der Befehl „Springe zur Adresse D3AAH“ könnte z.B. den Code „CA D3 AA“ haben. Es ist leicht nachvollziehbar, daß diese Befehle bzw. deren Codes von Prozessor zu Prozessor verschieden sind. So kennt die CPU eines PCs andere Befehle wie die CPU eines PDAs (personal digital assistant). Es wird hier auch vom Befehlssatz gesprochen.
+
+\subsection{Maschinen- bzw. Assemblerprogrammierung}
+Assembler ist eine maschinenorientierte Programmiersprache, die von Prozessor zu Prozessor unterschiedlich ist. Assemblerprogramme können nur zusammen mit ihrem Prozessortyp laufen. Wenn nun ein Computer mit diesen Befehlen programmiert wird, so ist dies nicht wesentlich schwerer als das programmieren in z.B. C, aber unglaublich mühsam, denn für jeden Befehl muss der Code gemerkt werden. Aber da viele Prozessoren ähnliche Befehle (aber andere Codes) haben, wurden dafür „Klartext-Kürzel“ (engl. mnemonic) definiert. Z.B. bedeutet „ADD R1, R2“, daß der Inhalt der Speicherzelle R1 zu R2 addiert wird und die Summe in R2 gespeichert wird.
+Auf diese Art lassen sich Maschinenprogramme viel leichter schreiben und lesen. Das Assemblerprogramm mit den ganzen mnemonischen Befehlen (existiert im für Menschen lesbaren Format, dem Quelltext oder Sourcecode) wird durch ein Programm in die CPU-Codes übersetzt. 
+
+\subsection{Höhere Programmiersprachen}
+Hier wird die mittels Computerprogramm zu lösende Problematik mit einer abstrakten, d.h. nicht CPU-abhängigen Sprache angegangen. Dazu steht eine Vielzahl von Programmier-sprachen zur Verfügung, wobei jede ihre individuellen Stärken und Schwächen hat. 
+Im Gegensatz zur Assemblersprache, die maschinenorientiert ist, ist eine höhere Programmiersprache mehr problemorientiert und nicht plattformabhängig.
+Nachdem die Aufgabe mit einer dieser Sprachen gelöst wurde, muss diese Sprache in die Sprache des jeweiligen Computertyps, also CPU, aber auch Grafikkarte, etc. umgesetzt werden. Dazu gibt es zwei Strategien: den Interpreter und den Compiler.
+
+\subsubsection{Interpreter-Sprachen}
+Beim Interpreter wird das jeweilige, in einer höheren Programmiersprache erstellte Programm unmittelbar vor dem Durchführen (zeilenweise) in die Maschinensprache übersetzt und anschließend ausgeführt. Daraus ergibt sich, daß die Ablaufgeschwindigkeit wesentlich geringer ist, als wenn das Übersetzen entfallen würde.
+Folgende bekannte Vertreter dieser Spezies existieren:
+
+\paragraph{Basic}
+Beginners All- Purpose Symbolic Instruction Code (Symbolischer Allzweck-Befehlscode für Anfänger). Es gibt sehr viele verschiedene BASIC - Dialekte, sie werden vor allem auf Kleinstrechnern und Homecomputer eingesetzt. Es wird bei dieser Programmiersprache kein strukturiertes Programmieren gefordert und deshalb ist es sehr leicht, sehr unübersehbare Programme zu schreiben.
+
+\paragraph{Java}
+Java wurde von Sun mit dem Ziel entwickelt, eine Programmiersprache zu erhalten, die plattformunabhängig ist. Dies wird erreicht, indem das Java-Programm (der Source-Code) in eine Metasprache übersetzt wird und dieser erst bei der Ausführung mittels der „virtual machine“, also einem virtuellen Computer – quasi ein Interpreter, in die Maschinensprache der jeweiligen Plattform umgesetzt wird. Java ist eine objektorientierte Sprache wie C++ oder Smalltalk.
+
+\subsubsection{Compiler-Sprachen}
+Die gesamte Programmbearbeitung mit einem Übersetzer (Compiler) erfolgt in drei Stufen, wobei auch drei Dateien erzeugt werden:
+\begin{enumerate}
+	\item Der Quell- oder Source-Code ist die Programmfassung in der gewählten Programmiersprache. Der Dateinamen ist so zu wählen daß der Zweck des Programms am Namen erkannt werden kann. Üblicherweise ist der Namen für den Quelltext in C mit .C zu beenden. 
+	\item Der Compiler übersetzt diesen Quellcode und erzeugt den Object - Code (typisch mit .OBJ beendet) der noch nicht ausführbar ist.
+	\item „Linker“ oder Verbinder hängt noch Teile des Compilers wie Ein-/Ausgabe Routinen, Funktionsberechnungen oder fremde Routinen an. Nach dem Linken entsteht das ausführbare Element, das der Prozessor verarbeiten kann (unter Windows oder DOS mit .EXE bezeichnete Datei).
+\end{enumerate}
+
+	
+Folgende typische Compilersprachen sind bekannt:
+
+\paragraph{Fortran}
+Formula Translation (Formelübersetzung). Fortran wurde im Jahre 1954 entwickelt. Früher wurden alle wissenschaftlich-technischen Anwendungen in dieser Sprache programmiert.
+
+\paragraph{Cobol}
+Common Business Oriented Language ( Allgemeine geschäftsorientierte Sprache). Sie wurde 1960 entwickelt und ist seit 1974 genormt und ist die meistbenutzte Programmiersprache für kaufmännische Aufgabenstellungen. Cobol ist besonders vorteilhaft einsetzbar für die Verarbeitung großer Datenmengen.
+
+\paragraph{Pascal}
+Nach dem französischen Mathematiker Blaise Pascal (1623 - 1663) benannt, 1971 von Niklas Wirth an der ETH Zürich, auf der Grundlage von ALGOL 60 entwickelt und 1983 genormt. Der ursprüngliche Zweck dieser Sprache war das programmieren zu erlernen. Sie ist eine sehr übersichtliche Programmiersprache. Da einige wichtige Teile wie z.B. die I/0 - Steuerungen nicht genormt wurden, entstanden auch hier verschiedene Dialekte und die Sprache hat sich leider dadurch auch nicht durchsetzen können.
+
+\paragraph{C}
+C wurde 1972 von Brian Kernighan und Dennis Ritchie in den Bell Laboratories entwickelt und ist sehr streng genormt. C verfügt über ein breites Anwendungsspektrum (z.B. wurde UNIX in C programmiert), über knappe Befehle (short is beautiful) und ein sehr klares Sprachkonzept.
+Da der Sprachumfang von C klein ist, kann es auch leicht auf die verschiedensten Plattformen implementiert werden, es eignet sich auch gut für Hardwarezugriffe.
+
+
+\section{Zusammenfassung Assemblersprache – höhere Programmiersprachen}
+Vereinfacht ausgedrückt gibt es für Assemblerprogramme folgende zwei Einsatzgebiete:
+1.	Es gibt für diese Plattform keinen Compiler oder Interpreter
+2.	Geschwindigkeit und/oder effiziente Speichernutzung ist die Grundvoraus¬setzung für die gewünschte Applikation.
+
+Für höhere Programmiersprachen sprechen:
+1.	Einfachere Lösungsmöglichkeit einer gegebenen Aufgabe.
+2.	Leichtere Wartbarkeit des geschriebenen Programms, d.h. es können relativ leicht Fehler korrigiert bzw. Erweiterungen angebracht werden.
+3.	Plattformunabhängigkeit des geschriebenen Programms, d.h. der Sourcecode des Programmes lässt sich auch auf anderen Plattformen einsetzen.
+
+Folgendes Beispiel soll den Unterschied zwischen einer höheren Programmiersprache und einer Maschinensprache verdeutlichen:
+a) In natürlicher Sprache: Schreibe das Wort "PASCAL" 
+b) In der höheren Sprache C: printf ("PASCAL"); 
+c) In der Maschinensprache des programmierbaren Taschenrechners TI-59:
+69 00 03 03 01 03 03 06 01 05 01 03 69 0102 07 00 00 00 00 00 00 00 00 69 02 69 05

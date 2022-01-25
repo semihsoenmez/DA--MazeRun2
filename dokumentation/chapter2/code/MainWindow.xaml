@@ -1,0 +1,35 @@
+﻿<Window x:Class="Rainfall_StatisticApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rainfall_StatisticApp"
+        mc:Ignorable="d"
+        Title="MainWindöß" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Background="LightBlue" Grid.Column="0">
+            <WrapPanel Margin="5" DockPanel.Dock="Top">
+                <Label Width="50"> Ort:</Label>
+                <TextBox Name="textboxLocation" Width="100"> </TextBox>
+            </WrapPanel>
+            <WrapPanel Margin="5" DockPanel.Dock="Top">
+                <Label Width="50"> Menge:</Label>
+                <TextBox Name="textboxAmount" Width="100" SelectionChanged="TextboxAmount_SelectionChanged"></TextBox>
+            </WrapPanel>
+            <WrapPanel Margin="5" DockPanel.Dock="Top">
+                <CheckBox Name="checkboxIsCapital">Hauptstadt</CheckBox>
+            </WrapPanel>
+            <WrapPanel Margin="5" DockPanel.Dock="Top">
+                <Label Width="50"> Datum</Label>
+                <DatePicker Name ="datepickerTimeStamp"/>
+                <Label Name="labelaverage"/>
+            </WrapPanel>
+            <Button DockPanel.Dock="Left" Name="buttonAdd" Margin="5" Width="100" HorizontalAlignment="Left" Padding="5" Click="ButtonAdd_Click">Hinzufügen</Button>
+            <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible" Name="listboxRainValue"/>
+        </DockPanel>
+    </Grid>
+</Window>
