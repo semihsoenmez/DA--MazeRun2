@@ -46,7 +46,7 @@ public class Observer : MonoBehaviour
                 if (raycastHit.collider.transform == player)
                 {
                     //gameEnding.CaughtPlayer();      // CaughtPlayer method is public
-                    basicRigidBodyPush.TakeDamage(10);
+                    basicRigidBodyPush.TakeDamage(100);
                 }
             }
         }

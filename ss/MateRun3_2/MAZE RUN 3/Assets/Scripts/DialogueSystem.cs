@@ -55,6 +55,7 @@ public class DialogueSystem: MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         dialogueText.text = "";
         Cursor.visible = true;
+        currentButtonClick = 0;
     }
 
     void Update()
@@ -83,6 +84,7 @@ public class DialogueSystem: MonoBehaviour {
 
     public void EnterRangeOfNPC()
     {
+        //currentButtonClick = 0;       Wenn noch mehrere Charakter kommen dann muss 
         outOfRange = false;
         dialogueGUI.SetActive(true);    //F to chat
         if (dialogueActive == true)
@@ -95,7 +97,6 @@ public class DialogueSystem: MonoBehaviour {
     {
         outOfRange = false;
         Cursor.lockState = CursorLockMode.None;
-        currentButtonClick = 0;
         //if (dialogueQuestions[currentQuestionIndex])
         //{
         //    dialogueBoxGUIQuestion.gameObject.SetActive(true);
@@ -147,6 +148,7 @@ public class DialogueSystem: MonoBehaviour {
                     if (ButtonReset)
                     {
                         neutralizeButtonColor(Button1, text1);
+                        ButtonReset = false;
                     }
                     if (dialogueIsQuestion[currentDialogueIndex-1])
                     {
