@@ -11,6 +11,7 @@ public class NPC : MonoBehaviour {
     public Transform NPCCharacter;
 
     private DialogueSystem dialogueSystem;
+    private StarterAssets.ThirdPersonController thirdPersonController;
     private int currentQuestionIndex;
 
     public string Name;
@@ -21,6 +22,7 @@ public class NPC : MonoBehaviour {
 
     void Start () {
         dialogueSystem = FindObjectOfType<DialogueSystem>(); //finds Dialogue System 
+        thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
     }
 	
 	void Update () {
@@ -46,6 +48,7 @@ public class NPC : MonoBehaviour {
             dialogueSystem.dialogueIsQuestion = IfQuestions;
             //dialogueSystem.currentQuestionIndex = currentQuestionIndex;
             FindObjectOfType<DialogueSystem>().NPCName();
+            thirdPersonController.LockCamera();
         }
     }
 
@@ -53,6 +56,7 @@ public class NPC : MonoBehaviour {
     {
         FindObjectOfType<DialogueSystem>().OutOfRange();
         this.gameObject.GetComponent<NPC>().enabled = false;
+        thirdPersonController.UnlockCamera();
     }
 }
 
