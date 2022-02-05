@@ -17,6 +17,12 @@ namespace StarterAssets
 #endif
 	public class ThirdPersonController : MonoBehaviour
 	{
+		private int curHealth;
+		private double curHealth2;
+
+		public int maxHealth;
+		public Healthbar healthbar;
+
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 2.0f;
@@ -119,7 +125,7 @@ namespace StarterAssets
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 
-		
+			curHealth = maxHealth;
 
 		}
 
@@ -335,6 +341,14 @@ namespace StarterAssets
 			
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		public void TakeDamage(int damage)
+		{
+			curHealth -= damage;
+			//curHealth2 = curHealth* 0.1;
+			healthbar.UpdateHealthbar((float)curHealth / (float)maxHealth);
+
 		}
 
 	}

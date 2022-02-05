@@ -1,9 +1,0 @@
-<TextBox x:Name="txtInput">
-  <TextBox.Text>
-    <Binding Path="Test" UpdateSourceTrigger="PropertyChanged">
-      <Binding.ValidationRules>
-        <local:StringEmptyValidationRule />
-      </Binding.ValidationRules>
-    </Binding>
-  </TextBox.Text>
-</TextBox>

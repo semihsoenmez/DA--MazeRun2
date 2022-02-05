@@ -24,12 +24,13 @@ public class BasicRigidBodyPush : MonoBehaviour
 		if (canPush) PushRigidBodies(hit);
 		
 	}
-	public void TakeDamage(int damage)
-	{
-		curHealth -= damage;
-		//curHealth2 = curHealth* 0.1;
-		healthbar.UpdateHealthbar((float)curHealth / (float)maxHealth);
-	}
+	//public void TakeDamage(int damage)
+	//{
+	//	curHealth -= damage;
+	//	//curHealth2 = curHealth* 0.1;
+	//	healthbar.UpdateHealthbar((float)curHealth / (float)maxHealth);
+		
+	//}
 
 	private void PushRigidBodies(ControllerColliderHit hit)
 	{

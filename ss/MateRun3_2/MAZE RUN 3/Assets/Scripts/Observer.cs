@@ -9,11 +9,20 @@ public class Observer : MonoBehaviour
     bool m_IsPlayerInRange;
     public GameEnding gameEnding;   // we need a reference to end the game
     private BasicRigidBodyPush basicRigidBodyPush;
+    private StarterAssets.ThirdPersonController thirdPersonController;
+
+    public int damage;
 
 
     private void Start()
     {
         basicRigidBodyPush = GameObject.FindObjectOfType<BasicRigidBodyPush>();
+        thirdPersonController = GameObject.FindObjectOfType<StarterAssets.ThirdPersonController>();
+
+        if (damage == 0)
+        {
+            damage = 100;
+        }
     }
 
     void OnTriggerEnter(Collider other)     // When a GameObject collides with another GameObject
@@ -46,7 +55,8 @@ public class Observer : MonoBehaviour
                 if (raycastHit.collider.transform == player)
                 {
                     //gameEnding.CaughtPlayer();      // CaughtPlayer method is public
-                    basicRigidBodyPush.TakeDamage(100);
+                    //basicRigidBodyPush.TakeDamage(100);
+                    thirdPersonController.TakeDamage(damage);
                 }
             }
         }
