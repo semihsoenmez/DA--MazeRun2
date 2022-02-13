@@ -37,18 +37,21 @@ public class NPC : MonoBehaviour {
 
     public void OnTriggerStay(Collider other)
     {
-        this.gameObject.GetComponent<NPC>().enabled = true;
-        FindObjectOfType<DialogueSystem>().EnterRangeOfNPC();
-        //dialogueSystem.currentDialogueIndex = dialogueindex;
-        if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.F))
+        if (!(other.gameObject.tag == "Ball"))
         {
             this.gameObject.GetComponent<NPC>().enabled = true;
-            dialogueSystem.Names = Name;
-            dialogueSystem.dialogueLines = sentences;
-            dialogueSystem.dialogueIsQuestion = IfQuestions;
-            //dialogueSystem.currentQuestionIndex = currentQuestionIndex;
-            FindObjectOfType<DialogueSystem>().NPCName();
-            thirdPersonController.LockCamera();
+            FindObjectOfType<DialogueSystem>().EnterRangeOfNPC();
+            //dialogueSystem.currentDialogueIndex = dialogueindex;
+            if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.F))
+            {
+                this.gameObject.GetComponent<NPC>().enabled = true;
+                dialogueSystem.Names = Name;
+                dialogueSystem.dialogueLines = sentences;
+                dialogueSystem.dialogueIsQuestion = IfQuestions;
+                //dialogueSystem.currentQuestionIndex = currentQuestionIndex;
+                FindObjectOfType<DialogueSystem>().NPCName();
+                thirdPersonController.LockCamera();
+            }
         }
     }
 
