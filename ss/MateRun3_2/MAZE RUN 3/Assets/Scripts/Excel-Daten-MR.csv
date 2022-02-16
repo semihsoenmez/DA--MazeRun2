@@ -1,0 +1,10 @@
+Name;Dialogue;IfQuestion;probe
+Zeiner;z1;true;1
+Zeiner;z2;true;1
+Zeiner;z3;true;1
+Zeiner;z4;true;1
+Zeiner;z5;true;1
+Zeiner;z6;true;1
+Sandy;Hello2;false;2
+Sandy2;Hello3;false;3
+Sandy3;Hello4;false;4
