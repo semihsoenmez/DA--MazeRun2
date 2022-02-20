@@ -26,8 +26,9 @@ public class NPC : MonoBehaviour {
     public class PlayerL
     {
         public string name;
-        public string dialogueL;
-        public bool ifQuesL;
+        public string[] dialogueL = new string[5];
+        public bool[] ifQuesL = new bool[5];
+        public string[] probe = new string[5];
     }
 
 
@@ -76,46 +77,31 @@ public class NPC : MonoBehaviour {
 
     public void OnTriggerExit()
     {
-        if (!(this.gameObject.tag == "Ball"))
-        {
-            FindObjectOfType<DialogueSystem>().OutOfRange();
-            this.gameObject.GetComponent<NPC>().enabled = false;
-            thirdPersonController.UnlockCamera();
-        }
+         FindObjectOfType<DialogueSystem>().OutOfRange();
+         this.gameObject.GetComponent<NPC>().enabled = false;   
+         thirdPersonController.UnlockCamera();   
     }
 
     void ReadCSV()
     {
         data = textAssetData.text.Split(new string[] { ";", "\n" }, System.StringSplitOptions.None);
 
-        int tableSize = data.Length / 4 - 1;
+        int tableSize = data.Length / 12 - 1;
         myPlayerList.playerL = new PlayerL[tableSize];
+        
 
 
         for (int i = 0; i < tableSize; i++)
         {
-            //Debug.Log(data[i]);
-            Debug.Log(data[4 * (0 + 1)]);
-           // Debug.Log(data[4 * (1 + 1)]);
-
-
             myPlayerList.playerL[i] = new PlayerL();
-            myPlayerList.playerL[i].name = data[4 * (i + 1)];
-            myPlayerList.playerL[i].dialogueL = data[4 * (i + 1) + 1];
-            myPlayerList.playerL[i].ifQuesL = System.Convert.ToBoolean(data[4 * (i + 1)+2]);
+            myPlayerList.playerL[i].name = data[12 * (i + 1)];
 
-
-
-            //for (int j = 0; j < tableSize; j++)
-            //{
-            //    myPlayerList.playerL[i].dialogueL = data[4 * (i + 1) + j];
-            //    myPlayerList.playerL[i].ifQuesL = System.Convert.ToBoolean(data[4 * (i + 1) + j+1]);
-            //}
-
+            for (int j = 0; j < 5; j++)
+            {
+                myPlayerList.playerL[i].dialogueL[j] = data[12 * (i + 1) + 1 + j];
+                myPlayerList.playerL[i].ifQuesL[j] = System.Convert.ToBoolean(data[12 * (i + 1) + 2 + j + 4]);
+            }
         }
-
     }
-
-
 }
 
