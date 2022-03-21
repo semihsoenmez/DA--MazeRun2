@@ -1,5 +1,5 @@
-Name;Dialogue1;Dialogue2;Dialogue3;Dialogue4;Dialogue5;IfQuestion1;IfQuestion2;IfQuestion3;IfQuestion4;IfQuestion5;probe
-Zeiner;z1;z2;z3;z4;z5;true;true;true;true;true;1
-Sandy;Hello2;Hello2;Hello2;Hello2;Hello2;true;true;true;true;true;1
-Sandy2;Hello3;Hello3;Hello3;Hello3;Hello3;true;true;true;true;true;1
-Sandy3;Hello4;Hello4;Hello4;Hello4;Hello4;true;true;true;true;true;1
+Name;Dialogue1;Dialogue2;Dialogue3;Dialogue4;Dialogue5;IfQuestion1;IfQuestion2;IfQuestion3;IfQuestion4;IfQuestion5;Answer1;Answer2;Answer3;Answer4;Answer5
+Zeiner;z1;z2;z3;z4;z5;false;false;false;false;false;ButtonA;ButtonB;ButtonC;ButtonD;ButtonA
+Sandy;s1;s2;s3;s4;s5;true;true;true;true;true;ButtonA;ButtonB;ButtonC;ButtonD;ButtonA
+Sandy2;Hello3;Hello3;Hello3;Hello3;Hello3;true;true;true;true;true;;;;;
+Sandy3;Hello4;Hello4;Hello4;Hello4;Hello4;true;true;true;true;true;;;;;

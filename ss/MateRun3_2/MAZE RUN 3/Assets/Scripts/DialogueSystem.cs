@@ -1,7 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueSystem: MonoBehaviour {
 
@@ -12,6 +11,8 @@ public class DialogueSystem: MonoBehaviour {
     public Transform dialogueBoxGUI;
     public Transform dialogueBoxGUIQuestion;
     public Transform dialogueBoxGUIQuestionButtons;
+
+    private StarterAssets.ThirdPersonController thirdPersonController;
 
     public float letterDelay = 0.1f;
     public float letterMultiplier = 0.5f;
@@ -31,6 +32,7 @@ public class DialogueSystem: MonoBehaviour {
     public bool dialogueActive = false;
     public bool dialogueEnded = false;
     public bool outOfRange = true;
+    public bool QuestionAnswered = true;
 
     public bool IsQuestin = false;
     private bool test = false;
@@ -39,9 +41,9 @@ public class DialogueSystem: MonoBehaviour {
     public AudioClip audioClip;
     AudioSource audioSource;
 
-    public string[] AnswersPlayer = new string[8];
+    public string[] AnswersPlayer;
     public string[] RightAnswers = new string[] { "ButtonA", "ButtonB", "ButtonC", "ButtonD", "ButtonA", "ButtonB", "ButtonC", "ButtonD" };
-
+    private int falseAnswers = 0;
 
 
     public bool answered = false;
@@ -53,34 +55,12 @@ public class DialogueSystem: MonoBehaviour {
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        thirdPersonController = FindObjectOfType<StarterAssets.ThirdPersonController>();
         dialogueText.text = "";
         Cursor.visible = true;
         currentButtonClick = 0;
     }
 
-    void Update()
-    {
-        //Press the space bar to apply no locking to the Cursor
-        //if (Input.GetKey(KeyCode.Space))
-        //    Cursor.lockState = CursorLockMode.None;
-        //currentButtonName1 = ButtonClick.CurrentButtonName;
-        //AnswersPlayer[ButtonClick.CurrentButtonClick] = ButtonClick.CurrentButtonName;
-    }
-
-    //void OnGUI()
-    //{
-    //    //Press this button to lock the Cursor
-    //    if (GUI.Button(new Rect(0, 0, 100, 50), "Lock Cursor"))
-    //    {
-    //        Cursor.lockState = CursorLockMode.Locked;
-    //    }
-
-    //    //Press this button to confine the Cursor within the screen
-    //    if (GUI.Button(new Rect(125, 0, 100, 50), "Confine Cursor"))
-    //    {
-    //        Cursor.lockState = CursorLockMode.Confined;
-    //    }
-    //}
 
     public void EnterRangeOfNPC()
     {
@@ -95,37 +75,28 @@ public class DialogueSystem: MonoBehaviour {
 
     public void NPCName()
     {
-        outOfRange = false;
-        Cursor.lockState = CursorLockMode.None;
-        //if (dialogueQuestions[currentQuestionIndex])
+        //if (QuestionAnswered)
         //{
-        //    dialogueBoxGUIQuestion.gameObject.SetActive(true);
-        //    //dialogueBoxGUI.gameObject.SetActive(false);
+        //    QuestionAnswered = false;
+            outOfRange = false;
+            Cursor.lockState = CursorLockMode.None;
 
-        //    //dialogueGUI.SetActive(false);
-        //    //dialogueBoxGUI.gameObject.SetActive(false);
-        //}
-        //else
-        //{
-        //    dialogueBoxGUI.gameObject.SetActive(true);
-        //    dialogueBoxGUIQuestion.gameObject.SetActive(false);
-        //}
+            dialogueGUI.SetActive(false);           //F to chat
+            dialogueBoxGUI.gameObject.SetActive(true);      //GUI Dialogue
+            dialogueBoxGUIQuestionButtons.gameObject.SetActive(false);      //GUI Dialogue Button
 
-        dialogueGUI.SetActive(false);           //F to chat
-        dialogueBoxGUI.gameObject.SetActive(true);      //GUI Dialogue
-        dialogueBoxGUIQuestionButtons.gameObject.SetActive(false);      //GUI Dialogue Button
-
-        nameText.text = Names;
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (!dialogueActive)
+            nameText.text = Names;
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                dialogueActive = true;
-                StartCoroutine(StartDialogue());    //start it
+                if (!dialogueActive)
+                {
+                    dialogueActive = true;
+                   
+                    StartCoroutine(StartDialogue());    //start it
+                }
             }
-        }
-        StartDialogue();    //get it
-        //currentQuestionIndex++;
+            StartDialogue();    //get it
+        
     }
 
 
@@ -142,7 +113,7 @@ public class DialogueSystem: MonoBehaviour {
             {
                 if (!letterIsMultiplied)
                 {
-
+                   // QuestionAnswered = true;
                     letterIsMultiplied = true;
                     StartCoroutine(DisplayString(dialogueLines[currentDialogueIndex++]));
                     if (ButtonReset)
@@ -154,7 +125,6 @@ public class DialogueSystem: MonoBehaviour {
                     {
                         dialogueBoxGUIQuestionButtons.gameObject.SetActive(true);
                         ButtonReset = true;
-
                     }
                     else
                     {
@@ -165,7 +135,6 @@ public class DialogueSystem: MonoBehaviour {
                         dialogueEnded = true;
                     }
                 }
-                
                 yield return 0;
             }
 
@@ -173,7 +142,6 @@ public class DialogueSystem: MonoBehaviour {
             {
                 if (Input.GetKeyDown(DialogueInput) && dialogueEnded == false)
                 {
-
                     break;
                 }
                 yield return 0;
@@ -263,21 +231,21 @@ public class DialogueSystem: MonoBehaviour {
         }
     }
 
-    public void DialogueBoxButtonSetActiveFalse()
-    {
-        StartCoroutine(ExampleCoroutine());
-        dialogueBoxGUIQuestionButtons.gameObject.SetActive(false);
-    }
-    public void CheckAnswerCheck(bool answercheck1)
-    {
-        answerCheck = answercheck1;
-    }
+    //public void DialogueBoxButtonSetActiveFalse()
+    //{
+    //    StartCoroutine(ExampleCoroutine());
+    //    dialogueBoxGUIQuestionButtons.gameObject.SetActive(false);
+    //}
+    //public void CheckAnswerCheck(bool answercheck1)
+    //{
+    //    answerCheck = answercheck1;
+    //}
 
-    IEnumerator ExampleCoroutine()
-    {
-        yield return new WaitForSeconds(100f);
-        yield return new WaitForSeconds(500f);
-    }
+    //IEnumerator ExampleCoroutine()
+    //{
+    //    yield return new WaitForSeconds(100f);
+    //    yield return new WaitForSeconds(500f);
+    //}
 
     public void CheckAnswer(string ButtonName, Button Button2, Text text2)
     {
@@ -294,6 +262,8 @@ public class DialogueSystem: MonoBehaviour {
         }
         else
         {
+            falseAnswers++;
+            thirdPersonController.TakeDamage(10000);
             ColorBlock cb = Button1.colors;
             cb.selectedColor = Color.red;
             Button1.colors = cb;
@@ -309,6 +279,4 @@ public class DialogueSystem: MonoBehaviour {
         Button1.colors = cb;
         text1.text = "Checking Answer...";
     }
-
-
 }

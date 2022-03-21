@@ -5,33 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/TirgamesAssets/SchoolScene/Scenes/SchoolSceneDayMazeRun.unity
     guid: 8d08a4e5bcf7637418ff4726f2eb99f5
-  - enabled: 0
-    path: Assets/Scenes/StartingScene.unity
+  - enabled: 1
+    path: Assets/Scenes/SampleGUIScene/StartingScene.unity
     guid: aeac7079be1d14c4d8c3ed8d9b8b1fcf
-  - enabled: 0
-    path: Assets/Scenes/Starting_Music_Scene.unity
+  - enabled: 1
+    path: Assets/Scenes/SampleGUIScene/Starting_Music_Scene.unity
     guid: 614647ce862ca6a42b2dbb324ed4b8a2
-  - enabled: 0
-    path: Assets/Scenes/LoginScene.unity
+  - enabled: 1
+    path: Assets/Scenes/SampleGUIScene/LoginScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/GameScene.unity
+  - enabled: 1
+    path: Assets/Scenes/SampleGUIScene/GameScene.unity
     guid: ba07aae008ddb6841bb6f48ea3bbfd5e
   - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: b68fa1904e9d61e4aa8e1b84c36567a7
-  - enabled: 0
-    path: Assets/Scenes/RegisterScene.unity
+  - enabled: 1
+    path: Assets/Scenes/SampleGUIScene/RegisterScene.unity
     guid: ec3376e2b3669d9408540423ec8aab89
-  - enabled: 0
-    path: Assets/Scenes/SelectLoginRegisterScene.unity
+  - enabled: 1
+    path: Assets/Scenes/SampleGUIScene/SelectLoginRegisterScene.unity
     guid: b4a5b48919190c545956d4123324a7a0
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TestingScene.unity
+    guid: a403be840f8e1be41977bdb1e2982cd9
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: a5c7c6fe72e45514cb4ab027c164641c, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 76abd75d5c272634ebd864985650dac8, type: 2}

@@ -17,8 +17,7 @@ public class ManageScenes : MonoBehaviour
 
     public void GameScene()
     {
-        //SceneManager.LoadScene("MainScene");
-        SceneManager.LoadScene("SchoolSceneDayMazeRun");
+        SceneManager.LoadScene("GameScene");
     }
     
     public void Back()

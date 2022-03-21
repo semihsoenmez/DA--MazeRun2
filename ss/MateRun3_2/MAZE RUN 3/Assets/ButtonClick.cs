@@ -14,7 +14,7 @@ public class ButtonClick : MonoBehaviour
 
     //public int currentButtonClick = 0;
 
-    public Transform dialogueBoxGUIQuestionButtons;
+    //public Transform dialogueBoxGUIQuestionButtons;
 
 
     private DialogueSystem dialogueSystem;
