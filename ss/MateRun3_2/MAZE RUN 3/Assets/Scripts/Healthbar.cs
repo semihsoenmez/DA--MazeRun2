@@ -12,3 +12,11 @@ public class Healthbar : MonoBehaviour
         healthbar.fillAmount = fraction;
     }
 }
+
+//public void TakeDamage(int damage)
+//{
+//    curHealth -= damage;
+//    //curHealth2 = curHealth* 0.1;
+//    healthbar.UpdateHealthbar((float)curHealth / (float)maxHealth);
+
+//}

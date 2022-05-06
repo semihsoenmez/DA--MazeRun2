@@ -41,7 +41,7 @@ public class DialogueSystem: MonoBehaviour {
     public AudioClip audioClip;
     AudioSource audioSource;
 
-    public string[] AnswersPlayer;
+    public string[] AnswersPlayer = new string[20];
     public string[] RightAnswers = new string[] { "ButtonA", "ButtonB", "ButtonC", "ButtonD", "ButtonA", "ButtonB", "ButtonC", "ButtonD" };
     private int falseAnswers = 0;
 
