@@ -50,13 +50,15 @@ public class NPC : MonoBehaviour {
 	
 	void Update () {
         Vector3 Pos = Camera.main.WorldToScreenPoint(NPCCharacter.position);
-        Pos.y += 500;
-        Pos.y += 200;
-        ChatBackGround.position = Pos;          //sets the position of the Dialog text
-        Vector3 PosQ = Pos;         
+        Vector3 PosN = new Vector3(200, -50, 0);
+        Pos.y += 700;
+        Pos.x -= 2500;
+        ChatBackGround.position = PosN;          //sets the position of the Dialog text
+        Vector3 PosQ = Pos;
+        Vector3 PosA = new Vector3(50, -100, 0);
         PosQ.y -= 100;
         PosQ.x += 90;
-        ChatBackGroundQuestion.position = PosQ; //sets the position of the Qestion Buttons
+        ChatBackGroundQuestion.position = PosA; //sets the position of the Qestion Buttons
     }
 
     public void OnTriggerStay(Collider other)
